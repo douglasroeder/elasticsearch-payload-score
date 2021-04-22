@@ -1,10 +1,8 @@
 # elasticsearch-payload-score
-Score documents with payload in elasticsearch 6.5
-
-document : http://www.irgroup.org/payload-score-in-elasticsearch-6.5/
+Score documents with payload in elasticsearch 7.12.0
 
 ## Releases
-2018-11-22 `6.5.0-b1` targets elasticsearch 6.5.0
+2021-04-22 `7.12.0` targets elasticsearch 7.12.0
 
 ## Overview
 
@@ -27,11 +25,7 @@ return sum_payload;
 ```
 
 ## Plugin installation
-Target elasticsearch version is 6.5 and java 1.8
-
-**simple installation**
-
-`$ELASTIC_HOME/bin/elasticsearch-plugin install https://github.com/focuschange/elasticsearch-payload-score/releases/download/v6.5.0-b1/payload_score-6.5.0-b1.zip`
+Target elasticsearch version is 7.12.0 and java 1.8
 
 ## Example
 
@@ -69,14 +63,12 @@ Target elasticsearch version is 6.5 and java 1.8
     }
   },
   "mappings": {
-    "_doc": {
-      "properties": {
-        "key": {
-          "type": "text",
-          "analyzer" : "payload_analyzer",
-          "term_vector": "with_positions_offsets_payloads",
-          "store" : true
-        }
+    "properties": {
+      "key": {
+        "type": "text",
+        "analyzer" : "payload_analyzer",
+        "term_vector": "with_positions_offsets_payloads",
+        "store" : true
       }
     }
   }
